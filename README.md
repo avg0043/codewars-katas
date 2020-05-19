@@ -13,5 +13,5 @@ Solutions for [Codewars](https://www.codewars.com/) katas.
 
 ## How to run the tests
 
-- `yarn test`: runs the tests in default mode.
-- `yarn test-watchall`: runs the test in watchall Jest mode.
+- `yarn test`: run the tests in default mode.
+- `yarn test-watchall`: run the tests in watchAll Jest mode.
