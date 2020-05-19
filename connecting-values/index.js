@@ -1,12 +1,8 @@
-const isInsideBoard = (x, y, board) => {
-  return x >= 0 && x <= board.length - 1 && y >= 0 && y <= board[0].length - 1
-}
+const isInsideBoard = (x, y, board) =>
+  x >= 0 && x <= board.length - 1 && y >= 0 && y <= board[0].length - 1
 
-const getConnectedCoord = (x, y, board, targetVal) => {
-  return isInsideBoard(x, y, board) && board[x][y] === targetVal
-    ? [x, y]
-    : undefined
-}
+const getConnectedCoord = (x, y, board, targetVal) =>
+  isInsideBoard(x, y, board) && board[x][y] === targetVal && [x, y]
 
 const getConnectedCoords = (board, targetVal, actualCoord) => {
   const [x, y] = actualCoord
@@ -21,10 +17,11 @@ const getConnectedCoords = (board, targetVal, actualCoord) => {
     getConnectedCoord(x - 1, y + 1, board, targetVal), // NE
   ]
 
-  return connectedCoords.filter(coord => coord !== undefined)
+  return connectedCoords.filter(coord => coord)
 }
 
 const deleteDuplicateCoords = coords => {
+  let t
   return coords.filter(((t = {}), a => !(t[a] = a in t)))
 }
 
@@ -57,4 +54,4 @@ const connectedValues = (arr, val, coord) => {
   return getAllConnectedCoords(arr, val, connectedCoords)
 }
 
-module.exports = connectedValues
+export default connectedValues

@@ -1,4 +1,4 @@
-const connectedValues = require('.')
+import connectedValues from '.'
 
 describe('Fixed tests', function () {
   let arr1 = [
